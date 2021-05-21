@@ -4,7 +4,7 @@ var app = new Vue({
         apiPoke: "https://pokeapi.co/api/v2/pokemon",
         pokes: [],
         pokeImg:[],
-        
+        pokenombre:null
     }, //fin de data   
     mounted() {
         this.Pokemones();                  
@@ -17,10 +17,11 @@ var app = new Vue({
             console.log(this.pokes);
             this.pokesImg('https://pokeapi.co/api/v2/pokemon/1')
         },
-        pokesImg: async function(url){
+        pokesImg: async function(url,nombre){
             const response = await fetch(url);
             this.pokeImg = await response.json();
             this.pokeImg = this.pokeImg.sprites.other;
+            this.pokenombre=nombre;
             console.log(this.pokeImg.dream_world.front_default);            
         }        
     } //fin de metodos    
