@@ -13,15 +13,18 @@
             <ul>              <!-- tamaños de columna sm, md, lg, xl -->
                 <li v-for="poke in pokes">
                     {{poke.name}} -- 
-                    <btn class="btn btn-success" v-bind:href="poke.url" v-on:click="pokesImg(poke.url)">{{poke.url}}</btn>
+                    <btn class="btn btn-success" v-bind:href="poke.url" v-on:click="pokesImg(poke.url,poke.name)">{{poke.url}}</btn>
                     <br><br>    
                 </li>
             </ul>
         </div>  <!-- cerramos div class="col-md"-->
         <div class="col-sm">
-            aquí vamos a poner la imagen del pokemon--&gt;
+            
             <img width="50%" heigth="50%" v-bind:src="pokeImg.dream_world.front_default">
+            {{pokenombre}}    
         </div> <!-- cerramos div class="col-sm"-->
     </div> <!-- cerramos div class="row"-->    
 </div>  <!-- cerramos div class="container"-->
+        <!-- incluimos el archivo de javascript con nuestra app de vue -->
+        <script src="vuepoke.js"></script>
 </body></html>
