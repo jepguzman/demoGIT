@@ -1,0 +1,27 @@
+<html><head>
+        <!-- CDN versión de desarrollo VUE.js, incluye 7advertencias de ayuda en la consola -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- CDN Boostrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- CDN de Awsome Fonts -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    </head>    
+<body <!--="" documentación="" del="" sistema="" de="" grid="" boostrap="" (https:="" getbootstrap.com="" docs="" 4.0="" layout="" )="" --="">
+<div id="app" class="container"> <!-- id es un identificador único de cada elemento HTML-->
+    <div class="row"> <!-- sistema de Grid de Boostrap row=renglón -->
+        <div class="col-md"> <!-- sistema de Grid de Boostrap col=columna -->
+            <ul>              <!-- tamaños de columna sm, md, lg, xl -->
+                <li v-for="poke in pokes">
+                    {{poke.name}} -- 
+                    <btn class="btn btn-success" v-bind:href="poke.url" v-on:click="pokesImg(poke.url)">{{poke.url}}</btn>
+                    <br><br>    
+                </li>
+            </ul>
+        </div>  <!-- cerramos div class="col-md"-->
+        <div class="col-sm">
+            aquí vamos a poner la imagen del pokemon--&gt;
+            <img width="50%" heigth="50%" v-bind:src="pokeImg.dream_world.front_default">
+        </div> <!-- cerramos div class="col-sm"-->
+    </div> <!-- cerramos div class="row"-->    
+</div>  <!-- cerramos div class="container"-->
+</body></html>
